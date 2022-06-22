@@ -28,7 +28,7 @@ export default function Studentform({ onStudentClick }) {
 
 
   function handleSubmit(event) {
-    API.post("sportal", "/createuser", { body: { username, email, password, groupName: "Student", department, classNo } })
+    API.post("sportal", "/createuser", { body: { username, email, password, type: "Student", department, classNo } })
       .then(res => console.log(res));
     event.preventDefault();
   }
@@ -36,7 +36,8 @@ export default function Studentform({ onStudentClick }) {
   function getStudent() {
     try {
       API.get("sportal", "/students",)
-        .then(res => setstudent(res.Items));
+        .then(res =>console.log(setstudent(res.Items)));
+        
     } catch (err) { console.log('error fetching students') }
   }
 

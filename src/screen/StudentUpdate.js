@@ -1,4 +1,4 @@
-import React ,{useEffect, useState} from 'react'
+import React ,{useState} from 'react'
 import Modal from './../../node_modules/react-bootstrap/esm/Modal';
 import { Button } from 'react-bootstrap';
 import { API } from 'aws-amplify';
@@ -15,7 +15,7 @@ export default  function StudentUpdate({student}){
   
 
   function handleSubmit(event) {
-    API.post("sportal", `/students/${student.studentId}`, { body: {studentId:student.studentId, department: department, classNo:classNo} })
+    API.post("sportal", `/students/${student.studentID}`, { body: {studentID:student.studentID, department: department, classNo:classNo} })
       .then(res => console.log(res));
     event.preventDefault();
   }

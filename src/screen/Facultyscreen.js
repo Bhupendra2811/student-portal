@@ -30,7 +30,7 @@ export default function Facultyscreen({ user }) {
   }
   function handleSubmit(event) {
     API.post("sportal", "/createuser", {
-      body: { username, email, password, groupName: "Faculty" },
+      body: { username, email, password, type: "Faculty" },
     }).then((res) => console.log(res));
     event.preventDefault();
   }

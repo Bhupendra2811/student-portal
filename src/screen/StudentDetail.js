@@ -14,7 +14,7 @@ export default  function StudentDetail({student}){
   const handleShow = () => setShow(true);
 
   function handleSubmit(event) {
-    API.post("sportal", `/studentdetails/${student.studentId}`, { body: {studentId:student.studentId, title: title, value:value} })
+    API.post("sportal", `/studentdetails/${student.studentID}`, { body: {studentId:student.studentID, title: title, value:value} })
       .then(res => console.log(res));
     event.preventDefault();
   }
